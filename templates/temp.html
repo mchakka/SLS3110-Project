@@ -1,0 +1,25 @@
+<div id="bodyContainer">
+        <form name = sendInputs action = "/api/convert" method = "POST">
+            <p2>Text to convert:</p2>
+
+            <input class ="inputs" id = "Temperature" name="temp" value ="{{output}}"/>
+
+            <button type="button" value="false" id="regularButton" onclick="change()">
+                Convert
+            </button>
+         </form>
+
+    </div>
+
+    <script>
+        function change() {
+          var change = document.getElementById("regularButton");
+
+          if (change.value == "false") {
+            document.sendInputs.submit();
+          } else {
+            change.value = "true";
+          }
+
+        }
+    </script>
