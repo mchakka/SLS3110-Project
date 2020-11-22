@@ -20,7 +20,7 @@ def convert():
     print("pitch" + pitch)
     print("rate" + rate)
 
-    file = main.function(actaulText, number, pitch, rate) # Inan's work
+    file = main.function(actaulText) # Inan's work
     #returns an mp3 file
     return render_template("index.html", output=file)
 
