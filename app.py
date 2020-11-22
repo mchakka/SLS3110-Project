@@ -12,8 +12,15 @@ def home():
 @app.route('/api/convert', methods=['GET', 'POST'])
 def convert():
     actaulText = request.form['temp'] # text from a form submit
-    number = request.form['number']
-    file = main.function(actaulText, number) # Inan's work
+    number = request.form['temp2']
+    pitch = request.form['pitch']
+    rate = request.form['rate']
+
+    print("option" + number)
+    print("pitch" + pitch)
+    print("rate" + rate)
+
+    file = main.function(actaulText, number, pitch, rate) # Inan's work
     #returns an mp3 file
     return render_template("index.html", output=file)
 
