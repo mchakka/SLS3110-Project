@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Audioguide Generator by The AudioBees</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
 </head>
-<body>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.min.css">
+<body class="waves">
 
 <div class="container">
   <div class="row">
-    <nav>
+    <nav style="background-color: #D9EFD3;">
       <div class="nav-wrapper">
-        <div class="col s12">
-          <a href="##" class="brand-logo">Audioguide Generator</a>
+        <div class="col s12" >
+          <a href="##" class="brand-logo"> GYF Meditative Audioguide Generator</a>
         </div>
       </div>
     </nav>
@@ -21,8 +22,7 @@
   <form class="col s8 offset-s2" name = sendInputs action = "/api/convert" method = "POST">
     <div class="row">
         <div class="input-field col s12">
-          <textarea id="message" name="temp" class="materialize-textarea"></textarea>
-          <label>Paste transcript here.</label>
+            <textarea id="message" name="temp" class="materialize-textarea"placeholder="Paste transcript here."></textarea>
         </div>
     </div>
 
@@ -30,22 +30,23 @@
         <div class="col s3">
             <label>Choose Background Music</label>
             <select class="browser-default" id="music" name="temp2">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+                <option value="1">Birds Chirping</option>
+                <option value="2">Meditation</option>
+                <option value="3">Nature Walk</option>
+                <option value="4">Rain</option>
             </select>
         </div>
       <div class="col s3">
         <label>Choose Rate</label>
         <p class="range-field">
-          <input type="range" name="rate" id="rate" min="1" max="100" value="10" />
+          <input type="range" name="rate" id="rate" min="0" max="4" value="0" />
         </p>
       </div>
 
       <div class="col s3">
         <label>Choose Pitch</label>
         <p class="range-field">
-          <input type="range" name="pitch" id="pitch" min="0" max="2" value="1" />
+          <input type="range" name="pitch" id="pitch" min="-20" max="20" value="0" />
         </p>
       </div>
     </div>
@@ -59,6 +60,7 @@
 
 <script>
         function change() {
+          alert("Check your file directory for audio - should be called mixed.mp3");
           var change = document.getElementById("regularButton");
 
           if (change.value == "false") {

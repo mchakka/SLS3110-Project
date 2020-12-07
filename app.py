@@ -16,13 +16,15 @@ def convert():
     pitch = request.form['pitch']
     rate = request.form['rate']
 
-    print("option" + number)
-    print("pitch" + pitch)
-    print("rate" + rate)
+    print("text " + actaulText)
+    print("option " + number)
+    print("pitch " + pitch)
+    print("rate " + rate)
 
-    file = main.function(actaulText) # Inan's work
+    file = main.make_audio(actaulText, number, pitch, rate) #Inan's work
+
     #returns an mp3 file
-    return render_template("index.html", output=file)
+    return render_template("home.html", output=file)
 
 
 if __name__ == '__main__':
