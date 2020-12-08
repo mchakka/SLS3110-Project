@@ -1,4 +1,3 @@
-import language as language
 from google.cloud import texttospeech
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="key.json"

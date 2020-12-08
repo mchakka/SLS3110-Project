@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask import send_file
 import main
 
 app = Flask(__name__)
@@ -24,7 +25,9 @@ def convert():
     file = main.make_audio(actaulText, number, pitch, rate) #Inan's work
 
     #returns an mp3 file
-    return render_template("home.html", output=file)
+
+    return send_file("output/final.mp3", as_attachment=True)
+
 
 
 if __name__ == '__main__':
